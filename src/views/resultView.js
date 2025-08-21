@@ -1,3 +1,8 @@
+import iconCSS from '../assets/images/icon-css.svg';
+import iconHTML from '../assets/images/icon-html.svg';
+import iconJS from '../assets/images/icon-javascript.svg';
+import iconACCESSIBILITY from '../assets/images/icon-accessibility.svg';
+
 class ResultView {
     _parentElemet = document.querySelector('main');
 
@@ -8,7 +13,12 @@ class ResultView {
         <div class="">
           <header class="flex w-[100%] justify-between items-center pl-2 pr-2 mb-19">
             <div class="flex gap-2">
-              <img class="size-5" src="./src/assets/images/icon-${quiz.title.toLowerCase()}.svg" alt="" />
+              <img src="${quiz.title.toLowerCase() === 'css' ? iconCSS : 
+                                    quiz.title.toLowerCase() === 'html' ? iconHTML :
+                                    quiz.title.toLowerCase() === 'javascript' ? iconJS :
+                                    quiz.title.toLowerCase() === 'accessibility' ? iconACCESSIBILITY :
+                                    ''
+                                  }" class="size-7" alt="${quiz.title}">
               <p class="dark:text-white">${quiz.title}</p>
             </div>
             
