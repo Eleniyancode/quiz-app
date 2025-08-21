@@ -1,4 +1,4 @@
-import '../style.css';
+import '../src/style.css';
 import * as model from './model.js'
 import quizMenuView from './views/quizMenuView.js';
 import quizQuestionsView from './views/quizQuestionsView.js';
