@@ -9,7 +9,7 @@ class ResultView {
           <header class="flex w-[100%] justify-between items-center pl-2 pr-2 mb-19">
             <div class="flex gap-2">
               <img class="size-5" src="./src/assets/images/icon-${quiz.title.toLowerCase()}.svg" alt="" />
-              <p>${quiz.title}</p>
+              <p class="dark:text-white">${quiz.title}</p>
             </div>
             
           </header>

@@ -75,10 +75,19 @@ const controlQuestion = function() {
     // console.log(model.state.score);
 }
 
-function controlSubmit(selectedOption, allOption) {
+function controlSubmit(selectedOption, allOption, nextBtn) {
+    const index = model.state.currentQuestionIndex;
     const question = model.getCurrentQuestion();
-    const answer = question.answer
+    const answer = question.answer;
     
+    setTimeout(() => {
+        if (index === 9) {
+            nextBtn.textContent = 'Get Result'
+        }else {
+            nextBtn.textContent = 'Next Question'
+        }
+    }, 1000)
+
     // console.log(allOption);
     const correctOption = allOption.find(o => o.dataset.answer === answer)
     correctOption.style.backgroundColor = 'green';

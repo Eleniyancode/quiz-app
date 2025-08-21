@@ -1,5 +1,7 @@
-import iconCorrect from '../assets/images/icon-correct.svg'
-import iconIncorrect from '../assets/images/icon-correct.svg'
+import iconCSS from '../assets/images/icon-css.svg';
+import iconHTML from '../assets/images/icon-html.svg';
+import iconJS from '../assets/images/icon-javascript.svg';
+import iconACCESSIBILITY from '../assets/images/icon-accessibility.svg';
 
 class QuizQuestionsView {
   _parentElement = document.querySelector('main');
@@ -13,7 +15,12 @@ class QuizQuestionsView {
         <header class="flex pl-2 pr-2 mb-9 items-center justify-between">
         <div class="flex items-center gap-2">
         <div class="p-2 bg-white">
-        <img class="size-5" src="./src/assets/images/icon-${quiz.title.toLowerCase()}.svg" alt="${quiz.title} icon" />
+                   <img src="${quiz.title.toLowerCase() === 'css' ? iconCSS : 
+                      quiz.title.toLowerCase() === 'html' ? iconHTML :
+                      quiz.title.toLowerCase() === 'javascript' ? iconJS :
+                      quiz.title.toLowerCase() === 'accessibility' ? iconACCESSIBILITY :
+                      ''
+                    }" class="size-7" alt="${quiz.title}">
         </div>
         <p class="dark:text-white text-black">${quiz.title}</p>
         </div>
@@ -48,7 +55,7 @@ class QuizQuestionsView {
             />
             
             <!-- Checkmark Icon -->
-            <span  class="absolute left-5  opacity-100 peer-checked:opacity-100 transition-opacity text-2xl dark:text-black">${i === 0 ? 'A' : 
+            <span  class="absolute left-3 lg:left-5  opacity-100 peer-checked:opacity-100 transition-opacity text-2xl dark:text-black">${i === 0 ? 'A' : 
               i === 1 ? 'B' :
               i === 2 ? 'C' : 'D'}</span>
             <span class="ml-2 transition-colors font-bold duration-300">"${opt}"</span>
@@ -77,12 +84,16 @@ class QuizQuestionsView {
       const errorDiv = document.querySelector('.error');
       const nextBtn = form.querySelector('button');
 
-      allOption.forEach(o => {
-        o.addEventListener('click', function(){
-          nextBtn.innerText = 'Next Question'
-          nextBtn.style.opacity = '1';
-        })
-      })
+      // allOption.forEach(o => {
+      //   o.addEventListener('click', function(){
+      //     nextBtn.innerText = 'Next Question'
+      //     nextBtn.style.opacity = '1';
+      //   })
+      // })
+
+      // if (index === 9) {
+      //   nextBtn.textContent = 'Get Result'
+      // }
 
       nextBtn.addEventListener('click', function() {
         nextBtn.style.backgroundColor = 'hsl(62.7% 0.265 303.9)'
@@ -102,7 +113,7 @@ class QuizQuestionsView {
         // iconCheckpass.classList.remove('hidden')
         // iconCheckpass.src = `${iconIncorrect}`
         label.style.backgroundColor = 'red'
-        handler(selected.value, allOption)
+        handler(selected.value, allOption, nextBtn)
       })
     }
 }

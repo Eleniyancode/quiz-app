@@ -1,3 +1,8 @@
+import iconCSS from '../assets/images/icon-css.svg';
+import iconHTML from '../assets/images/icon-html.svg';
+import iconJS from '../assets/images/icon-javascript.svg';
+import iconACCESSIBILITY from '../assets/images/icon-accessibility.svg';
+
 class QuizMenu {
     _parentElement = document.querySelector('main');
     // _htmlQuizEl = document.getElementById('html')
@@ -24,7 +29,12 @@ class QuizMenu {
           ${quizzes.map(q =>` 
             <div data-title="${q.title}" class="quiz-btn p-4 hover:bg-purple-400 rounded shadow-2xl bg-white dark:text-white dark:bg-gray-700 mb-3 flex items-center gap-5">
             <div class="p-3 bg-white rounded-2xl">
-            <img src="./src${q.icon.slice(1)}" class="size-7" alt="${q.title}">
+            <img src="${q.title.toLowerCase() === 'css' ? iconCSS : 
+              q.title.toLowerCase() === 'html' ? iconHTML :
+              q.title.toLowerCase() === 'javascript' ? iconJS :
+              q.title.toLowerCase() === 'accessibility' ? iconACCESSIBILITY :
+              ''
+            }" class="size-7" alt="${q.title}">
             </div>  
               <p class="text-2xl">${q.title}</p>
             </div>`
