@@ -83,8 +83,10 @@ function controlSubmit(selectedOption, allOption, nextBtn) {
     setTimeout(() => {
         if (index === 9) {
             nextBtn.textContent = 'Get Result'
+            nextBtn.style.backgroundColor = 'purple'
         }else {
             nextBtn.textContent = 'Next Question'
+            nextBtn.style.backgroundColor = 'purple'
         }
     }, 1000)
 

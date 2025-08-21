@@ -2,6 +2,7 @@ import iconCSS from '../assets/images/icon-css.svg';
 import iconHTML from '../assets/images/icon-html.svg';
 import iconJS from '../assets/images/icon-javascript.svg';
 import iconACCESSIBILITY from '../assets/images/icon-accessibility.svg';
+import { escapeHTML } from '../helper';
 
 class QuizQuestionsView {
   _parentElement = document.querySelector('main');
@@ -33,7 +34,7 @@ class QuizQuestionsView {
         <div>
         <p class="text-gray-400 italic mb-5">Question ${index + 1} of 10</p>
         <p class="text-2xl lg:text-[20px] dark:text-white font-bold">
-        ${questionObj.question}
+        ${escapeHTML(questionObj.question)}
         </p>
         </div>
         
@@ -58,7 +59,7 @@ class QuizQuestionsView {
             <span  class="absolute left-3 lg:left-5  opacity-100 peer-checked:opacity-100 transition-opacity text-2xl dark:text-black">${i === 0 ? 'A' : 
               i === 1 ? 'B' :
               i === 2 ? 'C' : 'D'}</span>
-            <span class="ml-2 transition-colors font-bold duration-300">"${opt}"</span>
+            <span class="ml-2 transition-colors font-bold duration-300">"${escapeHTML(opt)}"</span>
             </label>
           `)
              .join('')
