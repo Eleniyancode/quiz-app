@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/controller.js"></script>
+    <title>Vite App</title>
+  </head>
+  <body class="h-screen lg:py-20 dark:bg-gray-700 overflow-y-hidden bg-[url(./src/assets/images/pattern-background-mobile-light.svg)] dark:bg-[url(./src/assets/images/pattern-background-mobile-dark.svg)] lg:dark:bg-[url(./src/assets/images/pattern-background-desktop-dark.svg)] bg-no-repeat bg-contain bg-center transition-colors duration-300">
+    <header class="absolute top-6 right-5 lg:top-10 lg:right-30 flex gap-2">
+          <img class="size-4 cursor-pointer theme-sun-icon" src="./src/assets/images/icon-sun-dark.svg" id="" alt="" />
+          <div class="toggle-switch bg-purple-600 w-7 h-4 rounded-2xl p-0.5 flex">
+            <span class="toggle-button block w-3 h-3 rounded-3xl bg-white"></span>
+          </div>
+          <img class="size-4 cursor-pointer theme-moon-icon" src="./src/assets/images/icon-moon-dark.svg" id="" alt="">
+        </header>
+    <main class="flex flex-col lg:w-[80%] lg:mx-auto justify-center p-5 relative">
+    </main>
+    <div class="error hidden">
+      <p class="flex gap-2 items-center justify-center text-red-600"><img src="./src/assets/images/icon-error.svg" class="size-5" alt="error-icon">Please select an option</p>
+    </div>
+  </body>
+</html>
