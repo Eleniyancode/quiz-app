@@ -1,3 +1,20 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+    font-family: 'Rubik-normal';
+    src: url('/fonts/Rubik-VariableFont_wght.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@theme{
+    --animate-fade-in: fade-in 1s ease-in-out forwards;
+    --font-rubik: 'Rubik-normal', sans-serif;
+
+    @keyframes fade-in {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+}

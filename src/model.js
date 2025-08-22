@@ -19,6 +19,10 @@ export function getCurrentQuestion() {
     return state.currentQuiz.questions[state.currentQuestionIndex] 
 }
 
+export function nextQuestion() {
+    return state.currentQuiz.questions[state.currentQuestionIndex++]
+}
+
 export function submitAnswer(selectedOption) {
     const question = getCurrentQuestion();
     if(selectedOption === question.answer) {
